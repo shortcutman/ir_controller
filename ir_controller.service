@@ -1,0 +1,14 @@
+[Unit]
+Description=IR Controller Service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=pi
+ExecStart=npm start --prefix /home/pi/ircontrols/ir_controller
+
+[Install]
+WantedBy=multi-user.target
