@@ -41,11 +41,13 @@ app.post('/raspotify', (request, response) => {
 app.get('/volumeup', (request, response) => {
   console.log('turn volume up')
   runIRCommand('volumeup')
+  response.send('received')
 })
 
 app.get('/volumedown', (request, response) => {
   console.log('turn volume down')
   runIRCommand('volumedown')
+  response.send('received')
 })
 
 app.listen(8111, () => {
